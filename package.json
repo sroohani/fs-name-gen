@@ -1,33 +1,49 @@
 {
-  "name": "natural-filename-generator",
-  "version": "1.0.0",
-  "dependencies": {
-    "lodash": "^3.10.1",
-    "moment": "^2.10.6"
+  "name": "@sroohani/fs-name-gen",
+  "version": "0.0.1",
+  "description": "Auto generates random file and folder names that look perfectly natural.",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.esm.js"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc && microbundle --tsconfig tsconfig.json --no-sourcemap",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
   },
   "engines": {
-    "node": ">=4.2.1",
-    "npm": ">=2.14.7"
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
   },
-  "main": "index.js",
-  "files": [
-    "index.js",
-    "/lib",
-    "/test"
-  ],
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1"
+  },
   "devDependencies": {
-    "mocha": "^2.3.3"
-  },
-  "description": "Auto generates random file and folder names that look perfectly natural.",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "mocha"
+    "@types/jest": "^29.5.14",
+    "@types/lodash": "^4.17.17",
+    "@types/node": "^22.15.29",
+    "jest": "^29.7.0",
+    "microbundle": "^0.15.1",
+    "ts-jest": "^29.3.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ChristianRich/natural-filename-generator.git"
+    "url": "https://github.com/sroohani/fs-name-gen.git"
   },
   "keywords": [
     "generator",
@@ -36,10 +52,10 @@
     "zipf",
     "filename generator"
   ],
-  "author": "Christian Rich <christianrich.me@gmail.com>",
+  "author": "Shahram Roohani",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ChristianRich/natural-filename-generator/issues"
+    "url": "https://github.com/sroohani/fs-name-gen/issues"
   },
-  "homepage": "http://chrisrich.io"
+  "homepage": "https://sroohani.github.io"
 }
